@@ -92,6 +92,7 @@ function App() {
           ? graphSchemaToModelSchema(schema)
           : undefined;
         console.log("schema json", schemaJson);
+        console.log("tuanbc- reader.result: ", reader.result);
         const importResult = await runImport(
           reader.result as string,
           schemaJson,
@@ -104,6 +105,7 @@ function App() {
         }
       } catch (e) {
         console.error(e);
+        console.log(e);
       } finally {
         setLoading(false);
       }
